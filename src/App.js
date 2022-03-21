@@ -1,5 +1,6 @@
 import './App.css';
 import Films from './views/Films/Films';
+import Books from './views/Books/Books';
 
 
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
@@ -15,9 +16,9 @@ function App() {
           {/* <Route exact path='/'>
             <Main />
           </Route> */}
-          {/* <Route path = '/books'>
-            <Books novels={books}/>
-          </Route> */}
+          <Route path = '/books'>
+            <Books />
+          </Route>
 
 
           {/* <Route path = './characters'>

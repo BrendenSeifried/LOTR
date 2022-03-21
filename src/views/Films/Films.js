@@ -7,11 +7,11 @@ import { fetchFilms } from '../../services/films';
 export default function Films() {
   const [films, setFilms] = useState([]);
   useEffect(()=> {
-    const everyFilm = async () => {
+    const everyFilmFunct = async () => {
       const everyFilm = await fetchFilms();
       setFilms(everyFilm);
     };
-    everyFilm();
+    everyFilmFunct();
   }, []);
 
   return (
@@ -21,10 +21,6 @@ export default function Films() {
           <h1>{data.title}</h1>
         </div>
       ))}
-      
-       
-     
-
     </div>
   );
 }
@@ -32,15 +28,3 @@ export default function Films() {
 
 
 
-
-// export default function Films({ films }) {
-//     const [films, setFilms] = useState([]);
-
-//   return (
-//     <div>Films:
-
-//       <div className='films'>{films}</div>
-
-//     </div>
-//   );
-// }
