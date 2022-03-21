@@ -22,7 +22,9 @@ export default function Characters() {
       {stars.map((data)=> (
         <div className='stars' key={data.id}>
           <h1>{data.name}</h1>
-          <p></p>
+          <p>Born: {data.birth} </p>
+          <p>Got yeeted: ({data.death}) R.I.P. In peace.</p>
+          <p>Race: {data.race} </p>
         </div>
       ))}
     </div>
