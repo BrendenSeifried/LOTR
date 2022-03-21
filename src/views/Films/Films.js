@@ -1,11 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default function Films({ films }) {
+import { fetchFilms } from '../../services/films';
+
+
+
+export default function Films() {
+  const [films, setFilms] = useState([]);
+  useEffect(()=> {
+    const everyFilm = async () => {
+      const everyFilm = await fetchFilms();
+      setFilms(everyFilm);
+    };
+    everyFilm();
+  }, []);
+
   return (
     <div>Films:
-
-      <div className='films'>{films}</div>
+      {films.map((data)=> (
+        <div className='films' key={data.id}>
+          <h1>{data.title}</h1>
+        </div>
+      ))}
+      
+       
+     
 
     </div>
   );
 }
+
+
+
+
+
+// export default function Films({ films }) {
+//     const [films, setFilms] = useState([]);
+
+//   return (
+//     <div>Films:
+
+//       <div className='films'>{films}</div>
+
+//     </div>
+//   );
+// }
