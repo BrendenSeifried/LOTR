@@ -24,3 +24,5 @@ export default function Main() {
    
   );
 }
+
+//checking CI Secrets in Netlify
