@@ -7,14 +7,14 @@ import SearchRace from '../../components/SearchRace';
 export default function Characters() {
   const [stars, setStars] = useState([]);
   const [race, setRace] = useState('All');
-  const [query, setQuery] = useState('');
+  // const [query, setQuery] = useState('');
   useEffect(()=> {
     const everyStarFunct = async () => {
-      const everyStar = await fetchCharacters(race, query);
+      const everyStar = await fetchCharacters(race, null);
       setStars(everyStar);
     };
     everyStarFunct();
-  }, [race, query]);
+  }, [race]);
 
 
 
