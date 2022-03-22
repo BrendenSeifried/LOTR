@@ -6,6 +6,8 @@ import { NavLink } from 'react-router-dom';
 export default function Main() {
   return (
     <div className='nameofstuff'>
+
+      <h1>LOTR</h1>
       <NavLink exact to = {'/books'}>
         <h1>Books</h1>
       </NavLink>
