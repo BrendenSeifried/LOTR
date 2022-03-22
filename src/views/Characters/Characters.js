@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { fetchCharacters } from '../../services/characters';
-
+import SearchRace from '../../components/SearchRace';
 
 
 export default function Characters() {
@@ -12,13 +12,15 @@ export default function Characters() {
     const everyStarFunct = async () => {
       const everyStar = await fetchCharacters(race, query);
       setStars(everyStar);
-      console.log(everyStar);
     };
     everyStarFunct();
-  }, []);
+  }, [race, query]);
+
+
+
 
   return (
-    <div>Characters:
+    <div> <SearchRace setRace={setRace}/>
       {stars.map((data)=> (
         <div className='stars' key={data.id}>
           <h1>{data.name}</h1>
